@@ -7,7 +7,7 @@ import org.kohsuke.args4j.Option;
 
 public class RepositoryMigrationOptions {
 
-    @Option(name = "-deployitHome", required = true, usage = "The folder where Deployit is installed.")
+    @Option(name = "-deployitHome", required = true, usage = "The folder where XL Deploy or XL Release is installed.")
     private String deployitHome;
 
     @Option(name = "-jackrabbit-config-file", required = true, usage = "The new jackrabbit configuration.")
@@ -16,7 +16,7 @@ public class RepositoryMigrationOptions {
     @Option(name = "-repository-name", required = true, usage = "The name of the folder holding the new repository")
     private String repositoryName;
 
-    @Option(name = "-updateDeployitConfiguration", usage = "Update the Deployit configuration", required = false)
+    @Option(name = "-updateDeployitConfiguration", usage = "Update the XL Deploy or XL Release configuration", required = false)
     private boolean updateDeployitConfiguration = false;
 
     public static RepositoryMigrationOptions parseCommandLine(String[] args) {
