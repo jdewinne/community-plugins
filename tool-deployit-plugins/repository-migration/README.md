@@ -12,10 +12,10 @@ This script allows to migrate the XL Deploy or XL Release repository from one co
 # Installation #
 
 1. Unzip the content of the distribution zip file (deployit-repository-migration-${version}-distribution.zip) in your deployit server installation.
-    * the `bin` directory should include now 2 new files migrate.sh & migrate.cmd
-    * the `plugins` directory should include now the repository-migration-${version}.jar
-    * a new `sample` directory
-2. If necessary, copy the jdbc drivers to the lib/ directory if your repository is plugged on a RDBMS (eg: ojdbc6.jar if your database is Oracle)
+    * the `bin` directory should include now 2 new files: `migrate.sh` and `migrate.cmd`;
+    * the `lib` directory should include now the repository-migration-${version}.jar;
+    * a new `sample` directory.
+2. If necessary, copy the jdbc drivers to the lib/ directory if your repository is plugged on a RDBMS (eg: ojdbc6.jar if your database is Oracle).
 
 # Execution
 
