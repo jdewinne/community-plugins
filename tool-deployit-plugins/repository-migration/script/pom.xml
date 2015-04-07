@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>repository-migration</artifactId>
-    <version>${deployit.api.version}-1-SNAPSHOT</version>
+    <version>${deployit.api.version}-1</version>
 
     <dependencies>
         <dependency>
