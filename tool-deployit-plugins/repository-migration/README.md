@@ -22,7 +22,7 @@ This script allows to migrate the XL Deploy or XL Release repository from one co
 1. Configure the new target repository structure `jackrabbit-repository.xml`. Do *not* modify or override the existing file. See [the documentation](https://docs.xebialabs.com/xl-deploy/how-to/configure-the-xl-deploy-repository.html).
 2. Run the migration script:
 
-	bin/migrate.sh -deployitHome <Deployit-Server-Home> -jackrabbit-config-file <Path-to-new-configuration-file> -repository-name <Name> -updateDeployitConfiguration
+	`bin/migrate.sh -deployitHome <Deployit-Server-Home> -jackrabbit-config-file <Path-to-new-configuration-file> -repository-name <Name> -updateDeployitConfiguration`
 
 For example:
 
