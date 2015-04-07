@@ -2,12 +2,12 @@
 
 # Overview #
 
-This script allows to migrate the Deployit Repository backend. The typical use case is to migrate from the default Deployit configuration (using Derby & FileSystem) to another backend (eg Full database storage).
+This script allows to migrate the XL Deploy or XL Release repository from one configuration to another. The typical use case is to migrate from the default configuration which uses Apache Derby and filesystem to another backend, for example fully external database storage.
 
 # Requirements #
 
-* **Deployit requirements**
-	* **Deployit**: version 3.9
+* **XL Deploy requirements version 3.9 or higher**
+* **XL Release 4.5.0 or higher** (may be working on other versions but was not tested)
 	
 # Installation #
 
@@ -19,12 +19,13 @@ This script allows to migrate the Deployit Repository backend. The typical use c
 
 # Execution
 
-1. Configure the new target repository structure `jackrabbit-repository.xml`. Do *not* modify or override the existing file. see the documentation [System Administartion Manual](http://docs.xebialabs.com/releases/3.9/deployit/systemadminmanual.html#using-a-database)
-2. Run the migration script
+1. Configure the new target repository structure `jackrabbit-repository.xml`. Do *not* modify or override the existing file. See [the documentation](https://docs.xebialabs.com/xl-deploy/how-to/configure-the-xl-deploy-repository.html).
+2. Run the migration script:
 
-`bin/migrate.sh  -deployitHome <Deployit-Server-Home> -jackrabbit-config-file <Path-to-new-configuration-file> -repository-name <Name> -updateDeployitConfiguration`
+	bin/migrate.sh -deployitHome <Deployit-Server-Home> -jackrabbit-config-file <Path-to-new-configuration-file> -repository-name <Name> -updateDeployitConfiguration
 
-Exemple
-`bin/migrate.sh  -deployitHome /opt/deployit/deployit-3.9.4-server -jackrabbit-config-file ./bin/jackrabbit-mysql-repository.xml  -repository-name migration-to-mysql -updateDeployitConfiguration`
+For example:
 
-Once the script has been successfully executed, you should have a new folder in the `SERVER_HOME/<Name>` directory having the <Name>. The `-updateDeployitConfiguration` flag updates the deployit.conf configuration file and copy the new jackrabbit configuration file to the conf/ directory. (previous jackrabbit configuration file is backed up)
+	bin/migrate.sh -deployitHome /opt/deployit/deployit-3.9.4-server -jackrabbit-config-file ./bin/jackrabbit-mysql-repository.xml -repository-name migration-to-mysql -updateDeployitConfiguration
+
+Once the script has been successfully executed, you should have a new folder in the `SERVER_HOME/<Name>` directory having the <Name>. The `-updateDeployitConfiguration` flag updates the `deployit.conf` or `xl-release-server.conf` configuration file and copies the new jackrabbit configuration file to the `conf/` directory. Previous Jackrabbit configuration file is backed up.
