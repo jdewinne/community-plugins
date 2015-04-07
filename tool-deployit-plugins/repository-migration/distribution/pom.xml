@@ -11,13 +11,13 @@
     </parent>
 
     <artifactId>deployit-repository-migration</artifactId>
-    <version>${deployit.api.version}-1</version>
+    <version>${deployit.api.version}-2-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <artifactId>repository-migration</artifactId>
             <groupId>${parent.groupId}</groupId>
-            <version>${deployit.api.version}-1</version>
+            <version>${deployit.api.version}-2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
