@@ -37,8 +37,8 @@ This directory contains example plugins that can be used for tutorials and as a 
 
 # Downloading a plugin
 
-You can find compiled, ready-to-install binaries in the [_Downloads_](http://tech.xebialabs.com/download/community-archive/) location. If you want, you can clone
-or fork the repository and compile the plugin from the source code.
+You can find compiled, ready-to-install binaries in the [_Downloads_](https://dist.xebialabs.com/public/community/) location.
+If you want, you can clone or fork the repository and compile the plugin from the source code.
 
 # Installing a plugin
 
