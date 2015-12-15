@@ -5,9 +5,10 @@ Scripts and libraries needed to support running XL Release as a service on Unix 
 
 **Installation**:
 
-1.  copy the files in **/bin** directory to your **<XL_RELEASE>/bin** directory.
-2.  copy the files in **/conf** directory to your **<XL_RELEASE>/conf** directory.
-3.  copy the entire **/serviceWrapper** directory to your **<XL_RELEASE>** home directory.
+1.  Download the  xlr-service-wrappers.zip file
+2.  copy the files in **/bin** directory to your **<XL_RELEASE>/bin** directory.
+3.  copy the files in **/conf** directory to your **<XL_RELEASE>/conf** directory.
+4.  copy the entire **/serviceWrapper** directory to your **<XL_RELEASE>** home directory.
 
 You can then run the following commands:
 
