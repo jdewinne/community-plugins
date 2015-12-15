@@ -7,7 +7,7 @@ Scripts and libraries needed to support running XL Release as a service on Unix 
 
 1.  copy the files in **/bin** directory to your **<XL_RELEASE>/bin** directory.
 2.  copy the files in **/conf** directory to your **<XL_RELEASE>/conf** directory.
-3.  copy the directory **/serviceWrapper** to your **<XL_RELEASE>** directory.
+3.  copy the entire **/serviceWrapper** directory to your **<XL_RELEASE>** home directory.
 
 You can then run the following commands:
 
