@@ -8,14 +8,14 @@
   <properties>
     <deployit.server.home>${env.DEPLOYIT_HOME}</deployit.server.home>
     <deployit.cli.home>${env.DEPLOYIT_CLI_HOME}</deployit.cli.home>
-    <deployit.api.version>4.0.0</deployit.api.version>
-    <deployit.spi.version>4.0.0</deployit.spi.version>
-    <deployit.engine.version>4.0.0</deployit.engine.version>
-    <deployit.servercli.version>4.0.0</deployit.servercli.version>
-    <deployit.bundledplugin.version>4.0.0</deployit.bundledplugin.version>
+    <deployit.api.version>2015.6.1</deployit.api.version>
+    <deployit.spi.version>5.1.1</deployit.spi.version>
+    <deployit.engine.version>5.1.1</deployit.engine.version>
+    <deployit.servercli.version>5.1.1</deployit.servercli.version>
+    <deployit.bundledplugin.version>5.1.1</deployit.bundledplugin.version>
     <deployit.wls.version>3.9.1</deployit.wls.version>
-    <overthere.version>2.4.2</overthere.version>
-    <scannit.version>1.2.1</scannit.version>
+    <overthere.version>4.2.1</overthere.version>
+    <scannit.version>1.4.0</scannit.version>
     <github.global.server>github</github.global.server>
     <maven.compile.source>1.7</maven.compile.source>
     <maven.compile.target>1.7</maven.compile.target>
@@ -58,7 +58,7 @@
         <artifactId>local-booter</artifactId>
         <version>${deployit.engine.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/lib/local-booter-${deployit.engine.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/lib/local-booter-${deployit.api.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.engine</groupId>
@@ -172,6 +172,13 @@
         <scope>system</scope>
         <systemPath>${deployit.server.home}/lib/engine-spi-${deployit.api.version}.jar</systemPath>
       </dependency>
+      <dependency>
+        <groupId>com.xebialabs.deployit</groupId>
+        <artifactId>xl-utils</artifactId>
+        <version>${deployit.api.version}</version>
+        <scope>system</scope>
+        <systemPath>${deployit.server.home}/lib/xl-utils-${deployit.api.version}.jar</systemPath>
+      </dependency>
 
       <dependency>
         <groupId>com.xebialabs.overthere</groupId>
@@ -205,13 +212,23 @@
       </dependency>
       <dependency>
         <groupId>de.schlichtherle.truezip</groupId>
+        <artifactId>truezip-kernel</artifactId>
+        <version>7.7.8</version>
+      </dependency>
+      <dependency>
+        <groupId>de.schlichtherle.truezip</groupId>
         <artifactId>truezip-file</artifactId>
-        <version>7.3.4</version>
+        <version>7.7.8</version>
       </dependency>
       <dependency>
         <groupId>javax.jcr</groupId>
         <artifactId>jcr</artifactId>
         <version>2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.scala-lang</groupId>
+        <artifactId>scala-library</artifactId>
+        <version>2.11.7</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
