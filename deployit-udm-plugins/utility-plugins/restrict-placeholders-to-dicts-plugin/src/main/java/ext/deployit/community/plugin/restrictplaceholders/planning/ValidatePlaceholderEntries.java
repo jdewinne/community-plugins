@@ -26,7 +26,7 @@ public class ValidatePlaceholderEntries {
     protected static final List<Step> NO_STEPS = ImmutableList.of();
 
     @PrePlanProcessor
-    public List<Step> validatePlaceholders(DeltaSpecification specification) {
+    public static List<Step> validatePlaceholders(DeltaSpecification specification) {
         List<DerivedArtifact<?>> artifactsWithPlaceholders = newArrayList();
         for (Delta delta : specification.getDeltas()) {
             // only interested in those deployeds that will be present *after* the deployment
