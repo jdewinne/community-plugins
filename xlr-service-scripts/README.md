@@ -10,6 +10,9 @@ Installation:
 You can then run the following commands:
 
 Install a service:  <XL_RELEASE>/bin/install-service (.sh or .cmd)
+
 Uninstall a service:  <XL_RELEASE>/bin/uninstall-service (.sh or .cmd)
+
 Start XL Release service:  start service xl-release
+
 Stop XL Release service:  stop service xl-release
