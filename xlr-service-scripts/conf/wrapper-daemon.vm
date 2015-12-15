@@ -46,9 +46,9 @@ done
 
 status() {
     if [ -f $w_wrapper_pid_file ]; then
-        echo "XL Deploy Server is running."
+        echo "XL Release Server is running."
     else
-        echo "XL Deploy Server is not running."
+        echo "XL Release Server is not running."
     fi
 }
 
