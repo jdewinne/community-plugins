@@ -74,7 +74,7 @@ public class SetChangeTicketChecklistItem {
 
     // not a constant because the class may (?) be loaded before the registry is initialized
     private static String getChecklistName() {
-        return DescriptorRegistry.getDescriptor(CHANGE_MANAGER_TYPE).newInstance()
+        return DescriptorRegistry.getDescriptor(CHANGE_MANAGER_TYPE).newInstance("dummy-id")
                .getProperty(CHANGE_TICKET_CHECKLIST_ITEM_NAME_PROPERTY);
     }
 }

@@ -59,7 +59,7 @@ public class SentEmail extends ProcessedTemplate<Resource> {
     private final Host localhost;
 
     public SentEmail() {
-    	localhost = getDescriptor("overthere.LocalHost").newInstance();
+    	localhost = getDescriptor("overthere.LocalHost").newInstance("dummy-id");
     	localhost.setOs(OperatingSystemFamily.getLocalHostOperatingSystemFamily());
     }
     

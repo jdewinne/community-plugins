@@ -19,6 +19,7 @@
     <module>single-file-importer</module>
     <module>jee-archive-importer</module>
     <module>mustachifier-importer</module>
-    <module>zip-importer</module>
+    <!-- this is broken as it depends on the ManifestBasedDarImporter -->
+    <!--module>zip-importer</module-->
   </modules>
 </project>

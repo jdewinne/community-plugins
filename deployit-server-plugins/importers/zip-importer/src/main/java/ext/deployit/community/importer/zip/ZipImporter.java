@@ -46,7 +46,7 @@ import com.xebialabs.deployit.server.api.importer.ImportSource;
 import com.xebialabs.deployit.server.api.importer.ImportedPackage;
 import com.xebialabs.deployit.server.api.importer.ImportingContext;
 import com.xebialabs.deployit.server.api.importer.PackageInfo;
-import com.xebialabs.deployit.service.importer.ManifestBasedDarImporter;
+import com.xebialabs.deployit.service.importer.XmlManifestDarImporter;
 import com.xebialabs.deployit.service.importer.source.FileSource;
 import com.xebialabs.deployit.service.importer.source.UrlSource;
 
@@ -56,7 +56,7 @@ import ext.deployit.community.importer.zip.config.ConfigParser;
 import ext.deployit.community.importer.zip.config.PrefixStripper;
 
 // this is terrible, of course...extending a class that's not part of the public API
-public class ZipImporter extends ManifestBasedDarImporter {
+public class ZipImporter extends XmlManifestDarImporter {
     public static final String ZIP_EXTENSION = "zip";
     
     private static final PlainArchiveConverter CONVERTER = new PlainArchiveConverter(null);

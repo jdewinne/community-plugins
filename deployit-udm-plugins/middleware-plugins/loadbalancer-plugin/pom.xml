@@ -27,6 +27,10 @@
 			<artifactId>remoting-plugin</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.xebialabs.deployit.plugins</groupId>
+			<artifactId>base-plugin</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>10.0.1</version>

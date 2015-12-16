@@ -44,8 +44,7 @@ public class RemoteHttpTesterStep extends ScriptExecutionStep {
 		MDC.put(MDC_KEY_SCRIPT_PATH, scriptTemplatePath);
 		try {
 			String osSpecificTemplate = resolveOsSpecificTemplate();
-			String executableContent = evaluateTemplate(osSpecificTemplate, vars);
-			logger.debug(executableContent);
+			String executableContent = evaluateTemplate(osSpecificTemplate, vars, false);
 			OverthereFile executable = uploadExecutable(executableContent, substringAfterLast(osSpecificTemplate, '/'));
 			return executeScript(executable);
 		} finally {

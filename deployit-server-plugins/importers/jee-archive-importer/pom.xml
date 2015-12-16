@@ -14,13 +14,12 @@
     <url>scm:git:git://github.com/xebialabs/community-plugins.git</url>
   </scm>
   <dependencies>
-
-      <dependency>
-          <groupId>com.sun.xml.parsers</groupId>
-          <artifactId>jaxp-ri</artifactId>
-          <version>1.4.5</version>
-      </dependency>
-      <dependency>
+    <dependency>
+      <groupId>com.sun.xml.parsers</groupId>
+      <artifactId>jaxp-ri</artifactId>
+      <version>1.4.5</version>
+    </dependency>
+    <dependency>
       <groupId>org.xebialabs.deployit</groupId>
       <artifactId>single-file-importer</artifactId>
       <version>${deployit.api.version}-1-SNAPSHOT</version>
@@ -38,21 +37,20 @@
 		<artifactId>findbugs</artifactId>
     </dependency>
     <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
     </dependency>
     <dependency>
-        <groupId>com.xebialabs.deployit</groupId>
-        <artifactId>jee-plugin</artifactId>
+      <groupId>com.xebialabs.deployit.plugins</groupId>
+      <artifactId>jee-plugin</artifactId>
     </dependency>
     <dependency>
-	  <groupId>de.schlichtherle.truezip</groupId>
-	  <artifactId>truezip-file</artifactId>
-	</dependency>
+      <groupId>de.schlichtherle.truezip</groupId>
+      <artifactId>truezip-file</artifactId>
+    </dependency>
     <dependency>
-        <groupId>com.xebialabs.overthere</groupId>
-        <artifactId>overthere</artifactId>
-	</dependency>
+      <groupId>com.xebialabs.overthere</groupId>
+      <artifactId>overthere</artifactId>
+    </dependency>
   </dependencies>
 </project>
-

@@ -19,22 +19,25 @@
       <artifactId>server-core</artifactId>
     </dependency>
     <dependency>
-        <groupId>com.xebialabs.deployit</groupId>
-        <artifactId>appserver-core</artifactId>
+      <groupId>com.xebialabs.deployit</groupId>
+      <artifactId>appserver-core</artifactId>
     </dependency>
-
+    <dependency>
+      <groupId>com.xebialabs.deployit</groupId>
+      <artifactId>xl-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>findbugs</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.xebialabs.deployit</groupId>
       <artifactId>plain-archive-converter</artifactId>
       <version>${deployit.api.version}-1-SNAPSHOT</version>
     </dependency>
     <dependency>
-          <groupId>com.google.code.findbugs</groupId>
-          <artifactId>findbugs</artifactId>
-    </dependency>
-	<dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>

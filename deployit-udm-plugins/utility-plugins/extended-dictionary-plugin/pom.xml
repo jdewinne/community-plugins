@@ -5,13 +5,8 @@
     <parent>
         <groupId>org.xebialabs.deployit</groupId>
         <artifactId>utility-plugins</artifactId>
-        <version>3.7.0</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>4.0</version>
     </parent>
-    <properties>
-        <deployit.server.home>/Users/bmousaud/Workspace/deployit/build-community/deployit-3.7.3-server</deployit.server.home>
-        <deployit.cli.home>/Users/bmousaud/Workspace/deployit/build-community/deployit-3.7.3-cli</deployit.cli.home>
-    </properties>
     <artifactId>extended-dictonary-plugin</artifactId>
     <version>${deployit.api.version}-1-SNAPSHOT</version>
     <scm>
@@ -30,6 +25,7 @@
         <dependency>
             <groupId>com.samskivert</groupId>
             <artifactId>jmustache</artifactId>
+            <version>1.9</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>

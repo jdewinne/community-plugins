@@ -35,6 +35,7 @@ import java.util.Set;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
 import com.xebialabs.deployit.plugin.api.deployment.execution.DeploymentStep;
+import com.xebialabs.deployit.plugin.api.deployment.planning.Checkpoint;
 import com.xebialabs.deployit.plugin.api.deployment.planning.DeploymentPlanningContext;
 import com.xebialabs.deployit.plugin.api.deployment.planning.PostPlanProcessor;
 import com.xebialabs.deployit.plugin.api.deployment.planning.PrePlanProcessor;
@@ -88,7 +89,7 @@ public class GeneratePreAndPostEmails {
     
     protected static SentEmail getDelegate(Type sentEmailPrototypeType,
             DeployedApplication deployedApplication) {
-        SentEmail delegate = getDescriptor(PRE_POST_EMAIL_TYPE).newInstance();
+        SentEmail delegate = getDescriptor(PRE_POST_EMAIL_TYPE).newInstance("dummy-id");
         delegate.setDeployedApplication(deployedApplication);
         MailServer mailServer = findMailServer(deployedApplication.getEnvironment());
         delegate.setContainer(mailServer);
@@ -180,12 +181,22 @@ public class GeneratePreAndPostEmails {
         }
 
         @Override
+        public DeployedApplication getPreviousDeployedApplication() {
+            throw new UnsupportedOperationException("TODO Auto-generated method stub");
+        }
+
+        @Override
         public com.xebialabs.deployit.plugin.api.services.Repository getRepository() {
             throw new UnsupportedOperationException("TODO Auto-generated method stub");
         }
 
         @Override
         public void addCheckpoint(Step arg0, Delta arg1) {
+            throw new UnsupportedOperationException("TODO Auto-generated method stub");
+        }
+
+        @Override
+        public void addCheckpoint(Step arg0, Checkpoint arg1) {
             throw new UnsupportedOperationException("TODO Auto-generated method stub");
         }
 
@@ -205,14 +216,18 @@ public class GeneratePreAndPostEmails {
         }
 
         @Override
-        public void addStepWithCheckpoint(Step arg0, Iterable<Delta> arg1) {
-            throw new UnsupportedOperationException("TODO Auto-generated method stub");            
-        }
-
-        @Override
         public void addStepWithCheckpoint(Step arg0, Delta arg1, Operation arg2) {
             throw new UnsupportedOperationException("TODO Auto-generated method stub");
         }
 
+        @Override
+        public void addStepWithCheckpoint(Step arg0, Iterable<Delta> arg1) {
+            throw new UnsupportedOperationException("TODO Auto-generated method stub");
+        }
+
+        @Override
+        public void addStepWithCheckpoint(Step arg0, Checkpoint arg1) {
+            throw new UnsupportedOperationException("TODO Auto-generated method stub");
+        }
     }
 }

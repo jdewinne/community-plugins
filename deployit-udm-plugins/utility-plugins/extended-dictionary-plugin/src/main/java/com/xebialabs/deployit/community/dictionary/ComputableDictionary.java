@@ -1,7 +1,7 @@
 package com.xebialabs.deployit.community.dictionary;
 
 import com.google.common.base.Function;
-import com.google.common.collect.MapMaker;
+import com.google.common.cache.CacheLoader;
 import com.google.common.collect.Sets;
 import com.samskivert.mustache.Mustache;
 import com.samskivert.mustache.MustacheException;
@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
@@ -81,13 +83,18 @@ public class ComputableDictionary extends Dictionary {
 	}
 
 	private Set<String> scan(String in) {
-		Map<String, String> resolution = new MapMaker().makeComputingMap(new Function<String, String>() {
-			public String apply(String input) {
-				return input;
+	  final Set<String> fetchedKeys = Collections.newSetFromMap(new ConcurrentHashMap());
+	  Map<String, String> capturingMap = new ConcurrentHashMap<String, String>() {
+			@Override
+			public String get(Object key) {
+			  // string -> string map, so keys are expected to be strings
+			  String keyAsString = (String) key;
+			  fetchedKeys.add(keyAsString);
+				return keyAsString;
 			}
-		});
-		Mustache.compiler().compile(in).execute(resolution, new DiscardingWriter());
-		return resolution.keySet();
+		};
+		Mustache.compiler().compile(in).execute(capturingMap, new DiscardingWriter());
+		return fetchedKeys;
 
 	}
 

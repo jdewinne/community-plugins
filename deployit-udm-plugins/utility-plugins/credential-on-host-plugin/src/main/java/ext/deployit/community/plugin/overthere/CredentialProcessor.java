@@ -19,6 +19,7 @@ import com.xebialabs.deployit.plugin.api.reflect.Type;
 import com.xebialabs.deployit.plugin.api.udm.ConfigurationItem;
 import com.xebialabs.deployit.plugin.api.udm.Deployed;
 import com.xebialabs.deployit.plugin.api.udm.DeployedApplication;
+import com.xebialabs.deployit.plugin.overthere.CheckConnectionDelegate;
 import com.xebialabs.deployit.plugin.overthere.Host;
 import com.xebialabs.deployit.plugin.overthere.HostContainer;
 
@@ -47,7 +48,7 @@ public class CredentialProcessor {
             public List<Step> apply(final Host host) {
                 logger.debug("CredentialProcessor injects credentials in a host {} ", host.getId());
                 setCredentials(host, "username", "password");
-                return (checkConnection ? host.checkConnection() : Collections.EMPTY_LIST);
+                return (checkConnection ? CheckConnectionDelegate.executedScriptDelegate(host, "checkConnection", null, null) : Collections.EMPTY_LIST);
             }
         });
         return newArrayList(concat(transform));

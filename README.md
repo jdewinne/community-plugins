@@ -50,10 +50,10 @@ To build the plugins in the community plugins repository:
  
 1.  Check out the community repository at [https://github.com/xebialabs/community-plugins](https://github.com/xebialabs/community-plugins).
 2.  Ensure that Java 1.7 and Maven are installed. 
-3.  Ensure that Maven is using Java 1.7 (otherwise, there may be issues when building). 
-4.  Export an environment variable called `DEPLOYIT_HOME` and point it to the XL Deploy home directory on your machine.
-5.  Export an environment variable called `DEPLOYIT_CLI_HOME` and point it to the XL Deploy CLI home directory on your machine.
-6.  Ensure that the WebLogic plugin is present in `DEPLOYIT_HOME/plugins` because a Liferay plugin requires it. Alternatively, you can skip building that plugin. 
+3.  Ensure that Maven is using Java 1.7 (otherwise, there may be issues when building).
+4.  Create a folder `DEPLOYIT_HOME/extracted-plugins` and use an archiving tool (e.g. [7-Zip](http://www.7-zip.org/)) to extract the following plugin JAR files from the corresponding XLDP files in `DEPLOYIT_HOME/plugins`: `base-plugin`, `deployment-checklist-plugin`, `generic-plugin`, `jee-plugin`, `python-plugin`, `remoting-plugin`, `webserver-plugin`, `wls-plugin` (alternatively, you can skip building the liferay-plugin, which is the only plugin that requires the `wls-plugin`)
+5.  Export an environment variable called `DEPLOYIT_HOME` and point it to the XL Deploy home directory on your machine.
+6.  Export an environment variable called `DEPLOYIT_CLI_HOME` and point it to the XL Deploy CLI home directory on your machine.
 7.  Run `mvn package` or `mvn clean install` to build the plugins. 
 
 You will find the built plugins under each one's target folder.

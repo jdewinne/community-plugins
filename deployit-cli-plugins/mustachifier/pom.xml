@@ -15,7 +15,7 @@
   </scm>
   <dependencies>
     <dependency>
-      <groupId>com.xebialabs.deployit</groupId>
+      <groupId>com.xebialabs.deployit.plugins</groupId>
       <artifactId>jee-plugin</artifactId>
     </dependency>
     <dependency>

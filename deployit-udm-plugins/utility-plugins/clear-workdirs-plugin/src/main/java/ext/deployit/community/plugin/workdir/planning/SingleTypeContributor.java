@@ -94,5 +94,10 @@ public abstract class SingleTypeContributor<D extends Deployed<?, ?>> {
         public D getDeployed() {
             return (D) delegate.getDeployed();
         }
+        
+        @Override
+        public List<String> getIntermediateCheckpoints() {
+            return delegate.getIntermediateCheckpoints();
+        }
     }
 }

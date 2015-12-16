@@ -24,6 +24,10 @@
         </dependency>
         <dependency>
             <groupId>com.xebialabs.deployit.plugins</groupId>
+            <artifactId>base-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xebialabs.deployit.plugins</groupId>
             <artifactId>remoting-plugin</artifactId>
         </dependency>
         <dependency>

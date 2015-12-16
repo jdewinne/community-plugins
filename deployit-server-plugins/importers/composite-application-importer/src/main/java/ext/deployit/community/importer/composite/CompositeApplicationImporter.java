@@ -35,13 +35,10 @@ public class CompositeApplicationImporter implements ListableImporter {
 	@Override
 	public ImportedPackage importEntities(PackageInfo packageInfo, ImportingContext context) {
 
-		Application application = Type.valueOf(Application.class).getDescriptor().newInstance();
-		application.setId(packageInfo.getApplicationId());
-
+		Application application = Type.valueOf(Application.class).getDescriptor().newInstance(packageInfo.getApplicationId());
 
 		final CompositeApplicationDescriptor descriptor = context.getAttribute("descriptor");
-		CompositePackage version = Type.valueOf(CompositePackage.class).getDescriptor().newInstance();
-		version.setId(generateId(application, packageInfo.getApplicationVersion()));
+		CompositePackage version = Type.valueOf(CompositePackage.class).getDescriptor().newInstance(generateId(application, packageInfo.getApplicationVersion()));
 		version.getPackages().addAll(descriptor.getVersions());
 		version.setApplication(application);
 

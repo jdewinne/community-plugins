@@ -42,14 +42,14 @@ public class ProcessedDeployedArtifact<D extends DeployableArtifact> extends Ext
         if (isLiferayArtifact()) {
             final int order = this.<Integer>getProperty("createOrder") - 1;
             final Host processorHost = getProcessorHost();
-            ctx.addSteps(new UploadArtifactStep(order, processorHost, this, getRemoteInputPath(processorHost)),
+            ctx.addSteps(new UploadArtifactStep(order, processorHost, this, getRemoteInputPath(processorHost), processorHost),
                     new WaitStep(order, timeout, processorHost.getId().toString(), "process the artfiact"),
                     new FetchProcessedArtifactStep(order, processorHost, this, getRemoteOutputPath(processorHost), fetchLiferayArtifact));
 
             if (deleteUploadedArtifact)
-                ctx.addSteps(new DeleteArtifactStep(100, processorHost, getRemoteInputPath(processorHost)));
+                ctx.addSteps(new DeleteArtifactStep(100, processorHost, getRemoteInputPath(processorHost), processorHost));
             if (deleteProcessedArtifact)
-                ctx.addSteps(new DeleteArtifactStep(100, processorHost, getRemoteOutputPath(processorHost)));
+                ctx.addSteps(new DeleteArtifactStep(100, processorHost, getRemoteOutputPath(processorHost), processorHost));
         }
     }
 

@@ -16,16 +16,18 @@
     </scm>
     <modules>
         <module>application-configuration-plugin</module>
-    	<module>casperjs-plugin</module>
+        <module>application-dependency-check-plugin</module>
         <module>change-mgmt-plugin</module>
-        <module>command2-plugin</module>
+        <module>clear-workdirs-plugin</module>
         <module>credential-on-host-plugin</module>
         <module>demo-plugin</module>
-        <module>deployment-test-plugin</module>
+        <module>deployable-mapping-verifier-plugin</module>
         <module>deployment-test2-plugin</module>
+        <module>deployment-test-plugin</module>
+        <module>extended-dictionary-plugin</module>
         <module>isolate-host-plugin</module>
         <module>keystore-plugin</module>
-        <module>lock-plugin</module>
+        <module>manual-step-plugin</module>
         <module>notifications-plugin</module>
         <module>pause-plugin</module>
         <module>per-container-dictionaries-plugin</module>
@@ -36,5 +38,6 @@
         <module>rpm-plugin</module>
         <module>scheduler-plugin</module>
         <module>sla-plugin</module>
+        <module>unix-file-plugin</module>
     </modules>
 </project>

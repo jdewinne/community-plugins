@@ -22,11 +22,15 @@
       <groupId>com.xebialabs.deployit.plugins</groupId>
       <artifactId>generic-plugin</artifactId>
     </dependency>
-      <dependency>
-          <groupId>com.xebialabs.deployit</groupId>
-          <artifactId>engine-spi</artifactId>
-      </dependency>
-      <dependency>
+    <dependency>
+      <groupId>com.xebialabs.deployit.plugins</groupId>
+      <artifactId>base-plugin</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.xebialabs.deployit</groupId>
+      <artifactId>engine-spi</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.github.stephenc.simple-java-mail</groupId>
       <artifactId>simple-java-mail</artifactId>
       <version>1.8</version>

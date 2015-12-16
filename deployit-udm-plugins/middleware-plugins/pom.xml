@@ -20,7 +20,7 @@
         <module>loadbalancer-plugin</module>
         <module>liquibase-plugin</module>
         <module>liferay-plugin</module>
-        <module>stored-procedures-plugin</module>
         <module>iseries-plugin</module>
+        <module>stored-procedures-plugin</module>
     </modules>
 </project>

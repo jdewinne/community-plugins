@@ -14,7 +14,6 @@
         <url>scm:git:git://github.com/xebialabs/community-plugins.git</url>
     </scm>
     <properties>
-        <overthere.version>2.1.0</overthere.version>
         <maven.test.skip>true</maven.test.skip>
     </properties>
     <dependencies>
@@ -28,10 +27,14 @@
         </dependency>
         <dependency>
             <groupId>com.xebialabs.deployit.plugins</groupId>
+            <artifactId>base-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xebialabs.deployit.plugins</groupId>
             <artifactId>remoting-plugin</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.xebialabs.deployit</groupId>
+            <groupId>com.xebialabs.deployit.plugins</groupId>
             <artifactId>jee-plugin</artifactId>
         </dependency>
         <dependency>
@@ -61,7 +64,7 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
                 <file>
-                    <exists>${deployit.server.home}/plugins/wls-plugin-${deployit.api.version}.jar</exists>
+                    <exists>${deployit.server.home}/extracted-plugins/wls-plugin-${deployit.wlsplugin.version}.jar</exists>
                 </file>
             </activation>
             <properties>
@@ -69,28 +72,9 @@
             </properties>
             <dependencies>
                 <dependency>
-                    <groupId>com.xebialabs.deployit.plugins</groupId>
-                    <artifactId>wls-plugin</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>com.xebialabs.deployit.plugins</groupId>
-                    <artifactId>python-plugin</artifactId>
-                </dependency>
-                <dependency>
                     <groupId>com.xebialabs.deployit</groupId>
                     <artifactId>udm-test-support</artifactId>
                     <version>${deployit.api.version}</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>com.xebialabs.overthere</groupId>
-                    <artifactId>overthere</artifactId>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                    <version>0.9.24</version>
                     <scope>test</scope>
                 </dependency>
                 <dependency>

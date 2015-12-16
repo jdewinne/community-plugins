@@ -16,6 +16,5 @@
     </scm>
     <modules>
         <module>yak-plugin</module>
-        <module>rule-demo-plugin</module>
     </modules>
 </project>

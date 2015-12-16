@@ -24,6 +24,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Lists.newArrayList;
 import static com.xebialabs.deployit.plugin.api.reflect.DescriptorRegistry.getDescriptor;
+import static com.xebialabs.deployit.server.api.util.IdGenerator.generateId;
 import static ext.deployit.community.importer.singlefile.io.Dirs.listRecursively;
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.String.format;
@@ -43,7 +44,9 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.xebialabs.deployit.plugin.api.reflect.Type;
+import com.xebialabs.deployit.plugin.api.udm.Application;
 import com.xebialabs.deployit.plugin.api.udm.Deployable;
+import com.xebialabs.deployit.plugin.api.udm.DeploymentPackage;
 import com.xebialabs.deployit.plugin.api.udm.base.BaseDeployableFileArtifact;
 import com.xebialabs.deployit.server.api.importer.ImportSource;
 import com.xebialabs.deployit.server.api.importer.ImportedPackage;
@@ -152,7 +155,10 @@ public abstract class SingleFileImporter implements ListableImporter {
     
     @Override
     public ImportedPackage importEntities(PackageInfo packageInfo, ImportingContext context) {
-        ImportedPackage importedPackage = new ImportedPackage(packageInfo);
+        Application app = Type.valueOf(Application.class).getDescriptor().newInstance(packageInfo.getApplicationId());
+        DeploymentPackage pkg = Type.valueOf(DeploymentPackage.class).getDescriptor().newInstance(generateId(app.getId(), packageInfo.getApplicationVersion()));
+        ImportedPackage importedPackage =
+            new ImportedPackage(packageInfo, app, pkg);
         for (Deployable deployable : getDeployables(importedPackage)) {
             LOGGER.debug("Adding deployable '{}' to package '{}'", deployable, packageInfo);
             importedPackage.addDeployable(deployable);
@@ -164,8 +170,8 @@ public abstract class SingleFileImporter implements ListableImporter {
     protected Set<Deployable> getDeployables(ImportedPackage importedPackage) {
         File importedFile = importedPackage.getPackageInfo().getSource().getFile();
         BaseDeployableFileArtifact fileArtifact = 
-            getDescriptor(getDeployableType(importedFile)).newInstance();
-        fileArtifact.setId(format("%s/%s", importedPackage.getVersion().getId(),
+            getDescriptor(getDeployableType(importedFile))
+            .newInstance(format("%s/%s", importedPackage.getVersion().getId(),
                 importedPackage.getApplication().getName()));
         fileArtifact.setFile(LocalFile.valueOf(importedFile));
         LOGGER.debug("Created file artifact with ID '{}'", fileArtifact.getId());

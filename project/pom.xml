@@ -13,7 +13,7 @@
     <deployit.engine.version>5.1.1</deployit.engine.version>
     <deployit.servercli.version>5.1.1</deployit.servercli.version>
     <deployit.bundledplugin.version>5.1.1</deployit.bundledplugin.version>
-    <deployit.wls.version>3.9.1</deployit.wls.version>
+    <deployit.wlsplugin.version>5.0.0</deployit.wlsplugin.version>
     <overthere.version>4.2.1</overthere.version>
     <scannit.version>1.4.0</scannit.version>
     <github.global.server>github</github.global.server>
@@ -63,9 +63,9 @@
       <dependency>
         <groupId>com.xebialabs.deployit.engine</groupId>
         <artifactId>remote-booter</artifactId>
-        <version>${deployit.engine.version}</version>
+        <version>${deployit.api.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.cli.home}/lib/remote-booter-${deployit.engine.version}.jar</systemPath>
+        <systemPath>${deployit.cli.home}/lib/remote-booter-${deployit.api.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.engine</groupId>
@@ -84,9 +84,9 @@
       <dependency>
         <groupId>com.xebialabs.deployit</groupId>
         <artifactId>appserver-core</artifactId>
-        <version>${deployit.servercli.version}</version>
+        <version>${deployit.api.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/lib/appserver-core-${deployit.servercli.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/lib/appserver-core-${deployit.api.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit</groupId>
@@ -100,14 +100,14 @@
         <artifactId>base-plugin</artifactId>
         <version>${deployit.bundledplugin.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/lib/base-plugin-${deployit.bundledplugin.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/base-plugin-${deployit.bundledplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.plugins</groupId>
         <artifactId>jee-plugin</artifactId>
         <version>${deployit.bundledplugin.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/lib/jee-plugin-${deployit.bundledplugin.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/jee-plugin-${deployit.bundledplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.plugins</groupId>
@@ -121,42 +121,42 @@
         <artifactId>webserver-plugin</artifactId>
         <version>${deployit.bundledplugin.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/available-plugins/webserver-plugin-${deployit.bundledplugin.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/webserver-plugin-${deployit.bundledplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.plugins</groupId>
         <artifactId>wls-plugin</artifactId>
         <version>${deployit.api.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/plugins/wls-plugin-${deployit.wls.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/wls-plugin-${deployit.wlsplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.plugins</groupId>
         <artifactId>deployment-checklist-plugin</artifactId>
         <version>${deployit.bundledplugin.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/plugins/deployment-checklist-plugin-${deployit.bundledplugin.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/deployment-checklist-plugin-${deployit.bundledplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.plugins</groupId>
         <artifactId>remoting-plugin</artifactId>
         <version>${deployit.bundledplugin.version}</version>
         <scope>system</scope> 
-        <systemPath>${deployit.server.home}/lib/remoting-plugin-${deployit.bundledplugin.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/remoting-plugin-${deployit.bundledplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.plugins</groupId>
         <artifactId>python-plugin</artifactId>
         <version>${deployit.bundledplugin.version}</version>
         <scope>system</scope>
-        <systemPath>${deployit.server.home}/lib/python-plugin-${deployit.bundledplugin.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/python-plugin-${deployit.bundledplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit.plugins</groupId>
         <artifactId>generic-plugin</artifactId>
         <version>${deployit.bundledplugin.version}</version>
         <scope>system</scope> 
-        <systemPath>${deployit.server.home}/lib/generic-plugin-${deployit.bundledplugin.version}.jar</systemPath>
+        <systemPath>${deployit.server.home}/extracted-plugins/generic-plugin-${deployit.bundledplugin.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit</groupId>
@@ -171,6 +171,13 @@
         <version>${deployit.api.version}</version>
         <scope>system</scope>
         <systemPath>${deployit.server.home}/lib/engine-spi-${deployit.api.version}.jar</systemPath>
+      </dependency>
+      <dependency>
+        <groupId>com.xebialabs.deployit</groupId>
+        <artifactId>xl-core</artifactId>
+        <version>${deployit.api.version}</version>
+        <scope>system</scope>
+        <systemPath>${deployit.server.home}/lib/xl-core-${deployit.api.version}.jar</systemPath>
       </dependency>
       <dependency>
         <groupId>com.xebialabs.deployit</groupId>
