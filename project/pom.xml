@@ -16,6 +16,7 @@
     <deployit.wlsplugin.version>5.0.0</deployit.wlsplugin.version>
     <overthere.version>4.2.1</overthere.version>
     <scannit.version>1.4.0</scannit.version>
+    <truezip.version>7.7.8</truezip.version>
     <github.global.server>github</github.global.server>
     <maven.compile.source>1.7</maven.compile.source>
     <maven.compile.target>1.7</maven.compile.target>
@@ -195,7 +196,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>16.0.1</version>
+        <version>18.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
@@ -205,7 +206,7 @@
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>1.7.5</version>
+        <version>1.7.12</version>
       </dependency>
       <dependency>
         <groupId>commons-httpclient</groupId>
@@ -220,12 +221,12 @@
       <dependency>
         <groupId>de.schlichtherle.truezip</groupId>
         <artifactId>truezip-kernel</artifactId>
-        <version>7.7.8</version>
+        <version>${truezip.version}</version>
       </dependency>
       <dependency>
         <groupId>de.schlichtherle.truezip</groupId>
         <artifactId>truezip-file</artifactId>
-        <version>7.7.8</version>
+        <version>${truezip.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.jcr</groupId>
@@ -252,11 +253,11 @@
           </configuration>
         </plugin>
         <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>2.5</version>
-            <configuration>
-                <encoding>${project.build.sourceEncoding}</encoding>
-            </configuration>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.5</version>
+          <configuration>
+            <encoding>${project.build.sourceEncoding}</encoding>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
